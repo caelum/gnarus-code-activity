@@ -15,7 +15,10 @@ class ActivityProcessor
       response = Net::HTTP.post_form(URI.parse(url), req_params)
       is_correct = response.is_a?(Net::HTTPSuccess) && response.body == "true"
     rescue SystemCallError => e
-      flash[:error] = "Impossível validar o exercício"
+      puts "Oops, nao rolou validar o exercicio #{e}"
+      p e
+      # imposível validar o cara =[
+      # tem que ter um mecanimo para mandar erro lá pro usuário
     end
 
     attempt.executions.create(

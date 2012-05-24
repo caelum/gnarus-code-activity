@@ -1,9 +1,9 @@
 <span><%= @attempt.exercise.title %></span><br />
 
 <form id="exercise" method="POST" action="<%= exercise_attempt_executions_url(@attempt.exercise, @attempt)%>">
-<input name="solution" id="solution" value="" />
-<input type="button" id="try" value="Verificar">
-<input type="button" id="skip" value="Ignorar e continuar">
+  <textarea rows="10" cols="50" id="solution"></textarea><br />
+  <input type="button" id="try" value="Verificar">
+  <input type="button" id="skip" value="Ignorar e continuar">
 </form>
 
 <div id="result"></div>
@@ -27,7 +27,7 @@ $(function() {
 		
 		allowsSkip : true,
 		
-		gnarusUri : '<%=@attempt.return_uri%>'
+		gnarusUri : '<%= @attempt.return_uri%>'
 		
 	}).setup();
 });
