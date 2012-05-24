@@ -1,0 +1,8 @@
+development:
+  remote_evaluator:"http://localhost:9292"
+
+production:
+  remote_evaluator:"http://gnarus-rubaluation.heroku.com"
+
+test:
+  remote_evaluator:"http://localhost:9292"
